@@ -1,0 +1,4 @@
+opencv-python-headless # headless for docker container
+numpy
+matplotlib
+loguru

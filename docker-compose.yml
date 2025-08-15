@@ -1,0 +1,13 @@
+services:
+  edge-processor:
+    build:
+      context: .
+      dockerfile: ./src/edge/Dockerfile
+      args:
+        - PYTHON_VERSION=${PYTHON_VERSION}
+    command: python face_detector.py
+    deploy:
+      resources:
+        limits:
+          cpus: "4"
+          memory: 8G
