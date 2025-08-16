@@ -10,6 +10,10 @@ Get environemnt variables by running the following shell command:
 cp .env.example .env
 ```
 
+### Install FFPMEG
+
+Link: https://ffmpeg.org/download.html#build-windows
+
 ## Start up
 
 You will just need to run the following command:

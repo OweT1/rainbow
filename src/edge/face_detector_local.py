@@ -1,15 +1,12 @@
 import cv2
 import time
 import os, sys
-from dotenv import load_dotenv
 from loguru import logger
 
 from helper import non_max_suppression_fast
 
-load_dotenv()
-
 # --- Settings ---
-RTSP_DOCKER_URL = os.getenv('RTSP_DOCKER_URL')
+VIDEO_SOURCE = 0  # webcam
 OUTPUT_PATH = "src/streaming/faces_output.avi"
 W, H = 640, 480
 
@@ -21,7 +18,7 @@ if face_cascade.empty():
     raise IOError("Failed to load Haar cascade XML.")
 
 # Open video source
-cap = cv2.VideoCapture(RTSP_DOCKER_URL)
+cap = cv2.VideoCapture(VIDEO_SOURCE)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, W)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, H)
 
